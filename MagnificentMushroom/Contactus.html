@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+
+   <meta charset="UTF-8" />
+
+   <title>Contact Us</title>
+
+   <link href="Assets\Styles\main.css" rel="stylesheet" type="text/css" />
+   <link href="Assets\Styles\csstyle.css" rel="stylesheet" type="text/css" />
+
+   </head>
+
+   <body>
+     <!--
+      <header>
+	       <img src="Assets\Images\mm.png" alt="Failed Image" />
+	    </header>
+    -->
+      <div class="menuBar">
+          <a href="index.html">Home</a>
+          <a href="Menu.html">Menu</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="Contactus.html">Contact Us</a>
+          <a href="https://www.instagram.com/luluslocaleatery/"><img src="Assets\Images\ig.png" class="navLogos"/></a>
+          <a href="https://www.facebook.com/Lulus-Local-Eatery-132285260224330/"><img src="Assets\Images\fb.png" class="navLogos"/></a>
+          <a href="https://www.yelp.com/biz/lulus-restaurant-van-nuys"><img src="Assets\Images\yelp.png" class="navLogos"/></a>
+          <a href="Cart.html" id="cartlbl"><span>View Cart</span></a>
+       </div>
+
+	   <section id="main">
+       <h1>CONTACT US</h1><br>
+		  <h2>File out a complant</h2>
+
+      <form name="interestForm" id="intersetForm"
+      action="mailto:benhampton11@yahoo.com?subject=Contact%20Us%20&amp;body=Thank%20you%20for%20for%20contacting%20us%20we%20hope%20to%20resolve%20the%20problem%20as%20soon%20as%20possible!"
+      method="post">
+
+
+		<fieldset id="otherFields">
+
+		   <legend>Issue Information</legend>
+
+
+		    <label for="ctype" class="blockEntry">Food or Payment</label>
+
+        <select id="ctype" onchange="ChangeList()">
+          <option>Please Choose</option>
+          <option value="food">Food</option>
+          <option value="payment">Payment</option>
+  </select>
+
+  <select id="prob" style="width:200px;"></select>
+
+  <script>
+  var userChoice = {};
+  userChoice['food'] = ['Service', 'Cooked Poperly', 'Price', 'Product not as advertised'];
+  userChoice['payment'] = ['Payment', 'Pricing', 'Over tip charge', 'Product not as advertised'];
+
+  function ChangeList() {
+      var opList = document.getElementById("ctype");
+      var probList = document.getElementById("prob");
+      var selOp = opList.options[opList.selectedIndex].value;
+      while (probList.options.length) {
+          probList.remove(0);
+      }
+      var ops = userChoice[selOp];
+      if (ops) {
+          var i;
+          for (i = 0; i < ops.length; i++) {
+              var op = new Option(ops[i], i);
+              probList.options.add(op);
+          }
+      }
+  }
+  </script>
+
+	  <input type="checkbox" id="call" name="call" />
+	  <label for="call">Sign me up for the Magnificent Mushroom updates!</label>
+
+	  <input type="submit" value="Submit Information">
+	  <input type="reset" value="Cancel" />
+	</form>
+  </section>
+
+      <footer>
+	       <address style="font-size: 15px; text-align:center">
+		         Magnificent Mushroom &#183;
+			          1 Magnificent Mushroom ln &#183;
+			             Saint Louis, MO 63129 &#183;
+		     </address>
+	   </footer>
+
+	</body>
+
+</html>
